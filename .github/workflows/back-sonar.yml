@@ -26,11 +26,11 @@ jobs:
           fetch-depth: 0
 
    
-      - name: Set up Java 17
+      - name: Set up Java 11
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '11'
 
      
       - name: Run SonarCloud analysis
@@ -38,8 +38,6 @@ jobs:
           cd back
           mvn sonar:sonar \
             -Dsonar.token=${{ env.SONAR_TOKEN }} \
-            -Dsonar.projectKey=tangilc_OC-P10_CICD:back \
-            -Dsonar.organization=tangilc \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
             -Dsonar.java.coveragePlugin=jacoco
