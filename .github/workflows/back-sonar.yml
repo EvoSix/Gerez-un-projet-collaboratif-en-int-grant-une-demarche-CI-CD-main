@@ -29,7 +29,7 @@ jobs:
       - name: Set up Java 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
+          distribution: 'oracle'
           java-version: '17'
 
      
@@ -40,4 +40,4 @@ jobs:
             -Dsonar.token=${{ env.SONAR_TOKEN }} \
             -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.projectKey=EvoSix_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD-main
-              -Dsonar.organization=EvoSix
+          
