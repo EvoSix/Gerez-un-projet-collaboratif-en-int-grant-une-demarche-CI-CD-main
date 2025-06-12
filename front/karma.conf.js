@@ -32,7 +32,23 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+     reporters: ['progress', 'junit', 'coverage'],
+ junitReporter: {
+      // Où seront écrits les fichiers .xml
+      outputDir: 'coverage/front-test-results',
+      // Nom unique du fichier (évite d’avoir plusieurs fichiers par browser)
+      outputFile: 'test-results.xml',
+      // Ne pas créer des fichiers par navigateur
+      useBrowserName: false
+    },
+      coverageReporter: {
+      dir: require('path').join(__dirname, 'coverage', 'bobapp'),
+      reporters: [
+        { type: 'html' },
+        { type: 'lcovonly' },
+        { type: 'text-summary' }
+      ]
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
