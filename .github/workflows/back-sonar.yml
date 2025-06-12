@@ -40,3 +40,4 @@ jobs:
             -Dsonar.token=${{ env.SONAR_TOKEN }} \
             -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.projectKey=EvoSix_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD-main
+              -Dsonar.organization=EvoSix
