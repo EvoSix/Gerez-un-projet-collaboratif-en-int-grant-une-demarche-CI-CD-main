@@ -1,0 +1,38 @@
+name: Frontend SonarCloud Scan
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'front/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'front/**'
+
+jobs:
+  sonar-scan:
+    runs-on: ubuntu-latest
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+    steps:
+      # 1) Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2) SonarCloud Scan
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v4
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: front
+          args: >-
+            -Dsonar.projectKey=EvoSix_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD-main
+            -Dsonar.sources=src
+            -Dsonar.exclusions=**/node_modules/**,**/*.spec.ts,**/test.ts,**/karma.conf.js,**/environments/**
+            -Dsonar.coverage.exclusions=**/main.ts
+            -Dsonar.javascript.lcov.reportPaths=coverage/bobapp/lcov.info
