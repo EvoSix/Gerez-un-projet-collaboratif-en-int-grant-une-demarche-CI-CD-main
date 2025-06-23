@@ -36,7 +36,6 @@ module.exports = function (config) {
     },
      reporters: ['progress', 'junit', 'coverage'],
  junitReporter: {
-   
       outputDir: require('path').join(__dirname, './coverage/bobapp'),
       outputFile: 'test-results.xml',
       useBrowserName: false
