@@ -32,6 +32,7 @@ jobs:
           projectBaseDir: front
           args: >-
             -Dsonar.projectKey=EvoSix_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD-main
+            -Dsonar.organization=evosix
             -Dsonar.sources=src
             -Dsonar.exclusions=**/node_modules/**,**/*.spec.ts,**/test.ts,**/karma.conf.js,**/environments/**
             -Dsonar.coverage.exclusions=**/main.ts
