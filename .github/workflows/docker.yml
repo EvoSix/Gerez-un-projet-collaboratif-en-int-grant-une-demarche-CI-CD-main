@@ -1,10 +1,12 @@
 name: Docker (CI/CD)
 on:
-  push:
-    branches: [ main ]
+  pull_request:
+    branches:
+      - main
     paths:
       - 'front/**'
       - 'back/**'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

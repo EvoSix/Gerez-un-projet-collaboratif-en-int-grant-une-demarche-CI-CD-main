@@ -1,10 +1,6 @@
 name: Frontend SonarCloud Scan
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'front/**'
   pull_request:
     branches: [ main ]
     paths:
