@@ -5,11 +5,14 @@ on:
     paths:
       - 'front/**'
 on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'front/**'
   pull_request:
     branches: [ main ]
     paths:
       - 'front/**'
-
 jobs:
   sonar-scan:
     runs-on: ubuntu-latest
