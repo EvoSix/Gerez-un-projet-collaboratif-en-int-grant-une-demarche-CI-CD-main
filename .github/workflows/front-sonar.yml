@@ -1,9 +1,5 @@
 name: Frontend SonarCloud Scan
-on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'front/**'
+
 on:
   push:
     branches: [ main ]
