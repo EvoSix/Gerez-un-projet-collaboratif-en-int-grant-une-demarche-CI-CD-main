@@ -15,8 +15,7 @@ module.exports = function (config) {
     ],
     client: {
       jasmine: {
-        // you can add configuration options for Jasmine here
-      
+    
        
        
       },
