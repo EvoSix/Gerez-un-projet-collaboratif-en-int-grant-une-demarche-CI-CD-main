@@ -1,7 +1,7 @@
 name: Backend SonarCloud Scan
 
 on:
-push:
+  push:
     branches:
       - main
     paths:
