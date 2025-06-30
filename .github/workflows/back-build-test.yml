@@ -1,7 +1,11 @@
 name: Backend Build & Coverage
 
 on:
-  pull_request:
+   push:
+    branches: [ main,TestDev ]
+    paths:
+      - 'back/**'
+   pull_request:
     branches:
       - main
     paths:
