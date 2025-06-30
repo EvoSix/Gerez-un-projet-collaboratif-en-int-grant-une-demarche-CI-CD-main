@@ -2,7 +2,7 @@ name: Backend SonarCloud Scan
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main,TestDev ]
     paths:
       - 'back/**'
   pull_request:

@@ -1,6 +1,10 @@
 name: Frontend Build & Coverage
 
 on:
+  push:
+    branches: [ main,TestDev ]
+    paths:
+      - 'front/**'
   pull_request:
     branches: [ main ]
     paths:
